@@ -1,14 +1,10 @@
-package com.matrix.java163Spring.service;
+package com.matrix.java163Spring.dao;
 
 import com.matrix.java163Spring.model.Student;
-import org.springframework.stereotype.Service;
-
-
 
 import java.util.List;
 
-@Service
-public interface StudentService {
+public interface StudentDao {
     public List<Student> getStudentsList();
     public Student getById(Integer id);
     public Student add( Student student);
