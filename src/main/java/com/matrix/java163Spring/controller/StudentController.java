@@ -1,11 +1,12 @@
 package com.matrix.java163Spring.controller;
 
-import com.matrix.java163Spring.model.Student;
+import com.matrix.java163Spring.model.dto.StudentAddRequestDto;
+import com.matrix.java163Spring.model.dto.StudentDto;
+import com.matrix.java163Spring.model.entity.Student;
 import com.matrix.java163Spring.service.StudentService;
-import com.matrix.java163Spring.service.impl.StudentServiceImpl;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
@@ -18,17 +19,17 @@ public class StudentController {
     private final StudentService studentService;
 
     @GetMapping()
-    public List<Student>getStudentsList(){
-        return studentService.getStudentsList();
+    public List<StudentDto> getStudentsList(Pageable pageable){
+        return studentService.getStudentsList(pageable);
     }
     @GetMapping("/{id}")
-    public Student getById(@PathVariable Integer id){
+    public StudentDto getById(@PathVariable Integer id){
         return studentService.getById(id);
     }
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public Student add(@RequestBody Student student){
-        return studentService.add(student);
+    public StudentDto add(@RequestBody StudentAddRequestDto studentAddRequestDto){
+        return studentService.add(studentAddRequestDto);
     }
     @PutMapping
     public Student update(@RequestBody Student student){
@@ -39,6 +40,15 @@ public class StudentController {
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void delete(@PathVariable Integer id){
         studentService.delete(id);
+    }
+
+    @GetMapping("/age")
+    public List<Student>getStudentAgesBiggerThan(@RequestParam int age) {
+        return studentService.getStudentAgesBiggerThan(age);
+    }
+    @PostMapping("/{id}/course/{courseId}")
+    public Student addCourseToStudent(@PathVariable Integer id, @PathVariable Integer courseId){
+        return studentService.addCourseToStudent(id,courseId);
     }
 
 }

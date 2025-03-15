@@ -1,6 +1,6 @@
 package com.matrix.java163Spring.dao;
 
-import com.matrix.java163Spring.model.Student;
+import com.matrix.java163Spring.model.entity.Student;
 
 import java.util.List;
 

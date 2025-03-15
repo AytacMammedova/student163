@@ -1,6 +1,10 @@
 package com.matrix.java163Spring.service;
 
-import com.matrix.java163Spring.model.Student;
+import com.matrix.java163Spring.model.dto.StudentAddRequestDto;
+import com.matrix.java163Spring.model.dto.StudentDto;
+import com.matrix.java163Spring.model.entity.Student;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 
@@ -9,9 +13,11 @@ import java.util.List;
 
 @Service
 public interface StudentService {
-    public List<Student> getStudentsList();
-    public Student getById(Integer id);
-    public Student add( Student student);
-    public Student update( Student student);
-    public void delete( Integer id);
+     List<StudentDto> getStudentsList(Pageable pageable);
+     StudentDto getById(Integer id);
+     StudentDto add( StudentAddRequestDto studentAddRequestDto);
+     Student update( Student student);
+     void delete( Integer id);
+     List<Student>getStudentAgesBiggerThan(int age);
+     Student addCourseToStudent(Integer id,Integer courseId);
 }

@@ -1,0 +1,8 @@
+databaseChangeLog:
+  - changeSet:
+      id: 20250303-12
+      author: aytac
+      changes:
+        - delete:
+            tableName: genre
+            where: id=5

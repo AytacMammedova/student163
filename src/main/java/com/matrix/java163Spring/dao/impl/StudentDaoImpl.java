@@ -2,7 +2,7 @@ package com.matrix.java163Spring.dao.impl;
 
 import com.matrix.java163Spring.dao.SQLQueries;
 import com.matrix.java163Spring.dao.StudentDao;
-import com.matrix.java163Spring.model.Student;
+import com.matrix.java163Spring.model.entity.Student;
 import lombok.RequiredArgsConstructor;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource;

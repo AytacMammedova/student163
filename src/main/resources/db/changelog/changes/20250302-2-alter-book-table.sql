@@ -1,0 +1,1 @@
+alter table book add column author varchar(50);

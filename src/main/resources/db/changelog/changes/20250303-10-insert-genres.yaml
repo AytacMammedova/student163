@@ -1,0 +1,32 @@
+databaseChangeLog:
+  - changeSet:
+      id: 20250303-10
+      author: aytac
+      changes:
+        - insert:
+            tableName: genre
+            columns:
+              - column:
+                  name: name
+                  value: Romance
+              - column:
+                  name: description
+                  value: Centers on love and emotional relationships.
+        - insert:
+            tableName: genre
+            columns:
+              - column:
+                  name: name
+                  value: Fantasy
+              - column:
+                  name: description
+                  value: Books featuring magic, supernatural elements
+        - insert:
+            tableName: genre
+            columns:
+              - column:
+                  name: name
+                  value: Science Fiction
+              - column:
+                  name: description
+                  value: Explores space travel, and advanced science

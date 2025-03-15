@@ -1,0 +1,12 @@
+databaseChangeLog:
+  - changeSet:
+      id: 20250303-11
+      author: aytac
+      changes:
+        - update:
+            tableName: genre
+            columns:
+              - column:
+                  name: description
+                  value: Explores futuristic technology, space travel
+            where: id=6

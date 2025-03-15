@@ -1,0 +1,11 @@
+databaseChangeLog:
+  - changeSet:
+      id: 20250303-08
+      author: aytac
+      changes:
+        - addColumn:
+            tableName: genre
+            columns:
+              - column:
+                  name: description
+                  type: varchar(50)

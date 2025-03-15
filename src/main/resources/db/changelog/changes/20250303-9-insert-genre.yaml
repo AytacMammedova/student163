@@ -1,0 +1,14 @@
+databaseChangeLog:
+  - changeSet:
+      id: 20250303-09
+      author: aytac
+      changes:
+        - insert:
+            tableName: genre
+            columns:
+              - column:
+                  name: name
+                  value: Classic
+              - column:
+                  name: description
+                  value: Have a significant impact on culture, literature

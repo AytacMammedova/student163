@@ -1,0 +1,1 @@
+update book set author='Leo Tolstoy' where id=2;
