@@ -23,7 +23,7 @@ public class StudentServiceImpl implements StudentService {
     private final StudentRepository studentRepository;
     private final CourseRepository courseRepository;
     private final StudentMapper studentMapper;
-    private final ModelMapper modelMapper;
+    //private final ModelMapper modelMapper;
 
 
 
@@ -35,9 +35,9 @@ public class StudentServiceImpl implements StudentService {
     @Override
     public StudentDto getById(Integer id){
     //mapstruct
-//        return studentMapper.toStudentDto(studentRepository.findById(id).orElseThrow(IllegalArgumentException::new));
-        Student student=studentRepository.findById(id).orElseThrow(IllegalArgumentException::new);
-        return modelMapper.map(student,StudentDto.class);
+        return studentMapper.toStudentDto(studentRepository.findById(id).orElseThrow(IllegalArgumentException::new));
+//        Student student=studentRepository.findById(id).orElseThrow(IllegalArgumentException::new);
+//        return modelMapper.map(student,StudentDto.class);
     }
 
     @Override
