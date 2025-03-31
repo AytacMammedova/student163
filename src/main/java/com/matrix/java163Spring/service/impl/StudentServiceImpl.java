@@ -28,9 +28,9 @@ public class StudentServiceImpl implements StudentService {
 
 
     @Override
-    public List<StudentDto> getStudentsList(Pageable pageable){
+    public List<StudentDto> getStudentsList(){
         log.info("List of students");
-        return  studentMapper.toCustomerDtoList(studentRepository.findAll(pageable).stream().toList());
+        return  studentMapper.toStudentDtoList(studentRepository.findAll());
     }
     @Override
     public StudentDto getById(Integer id){

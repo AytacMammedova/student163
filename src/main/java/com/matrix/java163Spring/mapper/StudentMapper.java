@@ -19,7 +19,7 @@ public interface StudentMapper {
     Student toStudent(StudentAddRequestDto studentAddRequestDto);
 
     @Mapping(source="lastname",target = "surname")
-    List<StudentDto> toCustomerDtoList(List<Student>studentList);
+    List<StudentDto> toStudentDtoList(List<Student>studentList);
 
 
 

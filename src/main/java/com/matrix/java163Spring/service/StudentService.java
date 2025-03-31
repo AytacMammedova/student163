@@ -13,7 +13,7 @@ import java.util.List;
 
 @Service
 public interface StudentService {
-     List<StudentDto> getStudentsList(Pageable pageable);
+     List<StudentDto> getStudentsList();
      StudentDto getById(Integer id);
      StudentDto add( StudentAddRequestDto studentAddRequestDto);
      Student update( Student student);

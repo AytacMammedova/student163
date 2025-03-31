@@ -19,8 +19,8 @@ public class StudentController {
     private final StudentService studentService;
 
     @GetMapping()
-    public List<StudentDto> getStudentsList(Pageable pageable){
-        return studentService.getStudentsList(pageable);
+    public List<StudentDto> getStudentsList(){
+        return studentService.getStudentsList();
     }
     @GetMapping("/{id}")
     public StudentDto getById(@PathVariable Integer id){

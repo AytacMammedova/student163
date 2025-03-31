@@ -1,8 +1,11 @@
 package com.matrix.java163Spring;
 
+import com.matrix.java163Spring.model.entity.security.Authority;
+import com.matrix.java163Spring.model.entity.security.User;
 import com.matrix.java163Spring.repository.CourseRepository;
 import com.matrix.java163Spring.repository.StudentRepository;
 import com.matrix.java163Spring.repository.UniversityRepository;
+import com.matrix.java163Spring.repository.UserRepository;
 import jakarta.mail.MessagingException;
 import jakarta.mail.internet.MimeMessage;
 import lombok.RequiredArgsConstructor;
@@ -14,10 +17,13 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.thymeleaf.context.Context;
 import org.thymeleaf.spring6.SpringTemplateEngine;
 
 import java.io.File;
+import java.util.List;
+import java.util.Set;
 
 
 @RequiredArgsConstructor
@@ -30,6 +36,9 @@ public class Java163SpringApplication implements CommandLineRunner {
 	private final UniversityRepository universityRepository;
 	private final JavaMailSender javaMailSender;
 	private final SpringTemplateEngine templateEngine;
+	private final UserRepository userRepository;
+	private final PasswordEncoder passwordEncoder;
+
 
 	public static void main(String[] args) {
 		SpringApplication.run(Java163SpringApplication.class, args);
@@ -38,6 +47,35 @@ public class Java163SpringApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
+//		User user=new User();
+//		user.setId(2);
+//		user.setUsername("ali");
+//		user.setPassword(passwordEncoder.encode("00000"));
+//		user.setAccountNonExpired(true);
+//		user.setEnabled(true);
+//		user.setAccountNonLocked(true);
+//		user.setCredentialsNonExpired(true);
+//
+//		Authority authority1=new Authority();
+//		authority1.setAuthority("USER");
+//		authority1.setId(3);
+//
+//		authority1.setUser(user);
+//
+//		user.setAuthorities(List.of(authority1));
+//		userRepository.save(user);
+
+
+
+
+
+
+
+
+
+
+
+
 		//Transaction
 //		Student student=studentRepository.findById(2).get();
 //		student.setSurname("Alizade");
@@ -67,7 +105,6 @@ public class Java163SpringApplication implements CommandLineRunner {
 //		ApplicationContext context=new AnnotationConfigApplicationContext(MyConfig.class);
 //		Student student=(Student) context.getBean("getStudentBeans");
 //		System.out.println(student);
-		sendEmailWithHtmlTemplate();
 
 	}
 
