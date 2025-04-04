@@ -1,5 +1,6 @@
 package com.matrix.java163Spring;
 
+import com.matrix.java163Spring.jwt.JwtService;
 import com.matrix.java163Spring.model.entity.security.Authority;
 import com.matrix.java163Spring.model.entity.security.User;
 import com.matrix.java163Spring.repository.CourseRepository;
@@ -38,6 +39,7 @@ public class Java163SpringApplication implements CommandLineRunner {
 	private final SpringTemplateEngine templateEngine;
 	private final UserRepository userRepository;
 	private final PasswordEncoder passwordEncoder;
+	private final JwtService jwtService;
 
 
 	public static void main(String[] args) {
@@ -66,6 +68,12 @@ public class Java163SpringApplication implements CommandLineRunner {
 //		userRepository.save(user);
 
 
+//	User user=userRepository.findByUsername("ali").orElseThrow(IllegalStateException::new);
+//	String token=jwtService.issueToken(user);
+//	user.setIssueToken(token);
+//	userRepository.save(user);
+//	System.out.println("JWT"+token);
+	//System.out.println(jwtService.verifyToken(token));
 
 
 

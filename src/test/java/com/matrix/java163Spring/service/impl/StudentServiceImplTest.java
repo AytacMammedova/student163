@@ -91,7 +91,7 @@ class StudentServiceImplTest {
 
     }
     @Test
-    void givenStudentThenSavaThenOk(){
+    void givenStudentThenSaveThenOk(){
         //Arrange
         when(studentMapper.toStudent(studentAddRequestDto)).thenReturn(student);
         when(studentRepository.save(student)).thenReturn(student);

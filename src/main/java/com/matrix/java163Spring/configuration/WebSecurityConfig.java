@@ -1,5 +1,6 @@
 package com.matrix.java163Spring.configuration;
 
+import com.matrix.java163Spring.filter.JwtAuthFilterConfigurerAdapter;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
@@ -15,12 +16,14 @@ import org.springframework.security.web.SecurityFilterChain;
 @EnableWebSecurity
 @RequiredArgsConstructor
 public class WebSecurityConfig {
+    private final JwtAuthFilterConfigurerAdapter jwtAuthFilterConfigurerAdapter;
     @Bean
     public static BCryptPasswordEncoder passwordEncoder(){
         return new BCryptPasswordEncoder();
     }
     @Bean
     public  SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+        http.apply(jwtAuthFilterConfigurerAdapter);
         http
                 .csrf(AbstractHttpConfigurer::disable)
                 .sessionManagement(session-> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
